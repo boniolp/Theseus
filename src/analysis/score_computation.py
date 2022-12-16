@@ -24,7 +24,11 @@ from src.models.feature import Window
 from src.models.ocsvm import OCSVM
 from src.models.poly import POLY
 from src.models.pca import PCA
-from src.models.norma import NORMA
+
+# Uncomment if you want to use NORMA. Please make sure that you unzip the source file 
+# (please follow what is written in norma.txt)
+#from src.models.norma import NORMA
+
 from src.models.matrix_profile import MatrixProfile
 from src.models.lof import LOF
 from src.models.iforest import IForest
@@ -115,13 +119,13 @@ def compute_score(methods,slidingWindow,data,X_data,data_train,data_test,X_train
             score = MinMaxScaler(feature_range=(0,1)).fit_transform(score.reshape(-1,1)).ravel()
             score = np.array([score[0]]*math.ceil((slidingWindow-1)/2) + list(score) + [score[-1]]*((slidingWindow-1)//2))
 
-        elif method == 'NormA':
-            clf = NORMA(pattern_length = slidingWindow, nm_size=3*slidingWindow)
-            x = data
-            clf.fit(x)
-            score = clf.decision_scores_
-            score = MinMaxScaler(feature_range=(0,1)).fit_transform(score.reshape(-1,1)).ravel()
-            score = np.array([score[0]]*((slidingWindow-1)//2) + list(score) + [score[-1]]*((slidingWindow-1)//2))
+        #elif method == 'NormA':
+        #    clf = NORMA(pattern_length = slidingWindow, nm_size=3*slidingWindow)
+        #    x = data
+        #    clf.fit(x)
+        #    score = clf.decision_scores_
+        #    score = MinMaxScaler(feature_range=(0,1)).fit_transform(score.reshape(-1,1)).ravel()
+        #    score = np.array([score[0]]*((slidingWindow-1)//2) + list(score) + [score[-1]]*((slidingWindow-1)//2))
 
         elif method == 'PCA':
             clf = PCA()
@@ -151,35 +155,6 @@ def compute_score(methods,slidingWindow,data,X_data,data_train,data_test,X_train
             score = np.array([score[0]]*math.ceil((slidingWindow-1)/2) + list(score) + [score[-1]]*((slidingWindow-1)//2))
             score = MinMaxScaler(feature_range=(0,1)).fit_transform(score.reshape(-1,1)).ravel()
 
-        #elif method == 'LSTM':
-        #    clf = lstm(slidingwindow = slidingWindow, predict_time_steps=1, epochs = 50, patience = 5, verbose=0)
-        #    clf.fit(data_train, data_test)
-        #    measure = Fourier()
-        #    measure.detector = clf
-        #    measure.set_param()
-        #    clf.decision_function(measure=measure)
-        #    score = clf.decision_scores_
-        #    score = MinMaxScaler(feature_range=(0,1)).fit_transform(score.reshape(-1,1)).ravel()
-
-        #elif method == 'AE':
-        #    clf = AE_MLP2(slidingWindow = slidingWindow, epochs=100, verbose=0)
-        #    clf.fit(data_train, data_test)
-        #    score = clf.decision_scores_
-        #    score = MinMaxScaler(feature_range=(0,1)).fit_transform(score.reshape(-1,1)).ravel()
-
-        #elif method == 'CNN':
-        #    clf = cnn(slidingwindow = slidingWindow, predict_time_steps=1, epochs = 100, patience = 5, verbose=0)
-        #    clf.fit(data_train, data_test)
-        #    measure = Fourier()
-        #    measure.detector = clf
-        #    measure.set_param()
-        #    clf.decision_function(measure=measure)
-        #    score = clf.decision_scores_
-        #    score = MinMaxScaler(feature_range=(0,1)).fit_transform(score.reshape(-1,1)).ravel()
-
-        #end_time = time.time()
-        #time_exec = end_time - start_time
-        #print(method,"\t time: {}".format(time_exec))
         methods_scores[method] = score
         
     return methods_scores

@@ -640,7 +640,7 @@ def update_graphs_page_measure(time_series,exp,plot_type,method,condition_custom
 		
 		##### compute Exp
 
-		pos_first_anom,slidingWindow,_,_,_,_,_,_,_ = generate_data(path,0,max_length=10000)
+		pos_first_anom,slidingWindow,_,_,_,_,_,_,_ = generate_data(path+ '.zip',0,max_length=10000)
 
 		dict_acc = {
 				'R_AUC_ROC':      {},

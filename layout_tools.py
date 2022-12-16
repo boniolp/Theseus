@@ -20,7 +20,7 @@ import ast
 ################################# DATA #################################
 ########################################################################
 methods_key = ['IFOREST','LOF','MP','NORMA','IFOREST1','HBOS','OCSVM','PCA','AE','CNN','LSTM','POLY']
-methods_key_measures = ['IFOREST','LOF','MP','NORMA','IFOREST1','HBOS','OCSVM','PCA','POLY']
+methods_key_measures = ['IFOREST','LOF','MP','IFOREST1','HBOS','OCSVM','PCA','POLY']
 measures_key = ['Precision@k','Precision','Recall','F','Rprecision','Rrecall','RF','AUC_ROC','AUC_PR']#,'R_AUC_ROC','R_AUC_PR','VUS_ROC','VUS_PR'
 
 path_top_dataseries = "data/benchmark_new/"
