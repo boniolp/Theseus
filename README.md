@@ -1,13 +1,20 @@
 # Theseus: Navigating the Labyrinth of Time Series Anomaly Detection
 
+
+
+
 The detection of anomalies in time series has gained ample academic and industrial attention, yet, no comprehensive benchmark exists to evaluate time-series anomaly detection methods. Therefore, there is no final verdict on which method performs the best (and under what conditions). Consequently, we often observe methods performing exceptionally well on one dataset but surprisingly poorly on another, creating an illusion of progress. To address these issues, we thoroughly studied over one hundred papers and summarized our effort in TSB-UAD, a new benchmark to evaluate univariate time series anomaly detection methods. In this repo, we provide Theseus, a modular and extensible web application that helps users navigate through the benchmark, and reason about the merits and drawbacks of both anomaly detection methods and accuracy measures under different conditions. Overall, our system enables users to compare 12 anomaly detection methods on 1980 time series, using 13 accuracy measures, and decide on the most suitable method and measure for some applications.
+
+<p align="center">
+<img width="800" src="./assets/demo_screen.png"/>
+</p>
 
 
 If you use Theseus in your project or research, cite the following two papers:
 
 * [VLDB 2022a](https://www.paparrizos.org/papers/PaparrizosVLDB22a.pdf)
 * [VLDB 2022b](https://www.paparrizos.org/papers/PaparrizosVLDB22b.pdf)
-* [VLDB 2022b](https://www.paparrizos.org/papers/BoniolVLDB22.pdf)
+* [VLDB 2022c](https://www.paparrizos.org/papers/BoniolVLDB22.pdf)
 
 ### References
 
