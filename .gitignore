@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+cache.db
+cache.db-shm
+cache.db-wal
+
 .DS_Store
 
 # Distribution / packaging
