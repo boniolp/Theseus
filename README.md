@@ -1,4 +1,16 @@
-# Theseus: Navigating the Labyrinth of Time Series Anomaly Detection
+
+
+
+<h1 align="center">Theseus</h1>
+<h2 align="center">Navigating the Labyrinth of Time Series Anomaly Detection</h2>
+
+<div align="center">
+<p>
+<img alt="GitHub" src="https://img.shields.io/github/license/boniolp/theseus"> <img alt="GitHub issues" src="https://img.shields.io/github/issues/boniolp/theseus">
+</p>
+</div>
+
+
 
 
 
