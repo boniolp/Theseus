@@ -1,4 +1,6 @@
-
+<p align="center">
+<img width="130" src="./assets/Theseus_logo.png"/>
+</p>
 
 
 <h1 align="center">Theseus</h1>
